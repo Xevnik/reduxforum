@@ -1,4 +1,4 @@
-import { FETCH_POSTS } from '../constants';
+import { FETCH_POSTS, FETCH_POST } from '../constants';
 
 //all: array of all posts to display
 //post: active/selcted post for user viewing
@@ -14,6 +14,13 @@ export default function(state = INITIAL_STATE, action) {
         ...state,
         all: action.payload.data
       };
+
+    case FETCH_POST:
+      return {
+        ...state,
+        post:  action.payload.data
+      };
+
     default:
       return state;
   }
